@@ -1,0 +1,97 @@
+﻿<!-- 
+    1. Сделать собственные примеры методов применяемых для массивов.
+
+    2. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+
+    3. Создать многомерный массив, размер массива получить от пользователя. Каждый нечётный подмассив заполнить значением 'odd', а чётный - 'even'. Размер каждого вложенного массива - 3.
+
+    4. Создать два произвольных массива: один массив - любимая спортивная команда / модели автомобилей / города, во втором - количество игроков в команде / объем двигателя / количество жителей в городе. Объединить данные из двух массивов и вывести их в одну строку. 
+    
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+      
+</head>
+<body>
+<!-- Задание №1. Метод sort-->
+    <script> 
+        var cars = ["Volvo", "Subaru", "Mercedes", "BMW", "Opel"];
+        cars.sort();
+
+        console.log(cars);
+    </script>
+
+
+<!-- Метод revers-->
+    <script>
+        var numbers = [3, 8, 12, 1, 28, 30, 15, 7, 9, 25];
+        numbers = numbers.reverse();
+
+        console.log(numbers);
+    </script>
+
+
+<!--Метод slice-->
+    <script>
+        var food = ["печенье", "шоколад", "борщ", "картошка", "вермишель"];
+        var newFood = food.slice(2, 4);
+
+        console.log(newFood);
+    </script>
+
+
+<!--Метод splice-->
+    <script>
+        var countries = ["Украина", "Германия", "Италия", "Польша", "Словакия", "Молдова", "Англия", "Франция"];
+         var del = countries.splice(3, 3);  
+
+        console.log(countries);
+    </script>
+
+
+<!--Задание №4-->
+    <script>
+        var items = ["Пантеры", "Volkswagen", "Opel", "Киев"];
+        var anotherItems = [15, 25, 20, "4 млн"];
+
+        var newItems = items.concat(anotherItems);
+        console.log(newItems); 
+    </script>
+
+
+<!--Задание №2-->
+    <script>
+        var cities = ["Киев", "Львов", "Одесса", "Харьков"];
+
+        var input;
+
+        while (input !== null) {
+    
+        input = prompt("Введите название нового города.\n\n Уже есть: \n\n" + cities.join("\n"));
+        cities = cities.concat(input);
+        }
+
+        document.write(cities.join("<br />"));
+        </script>
+
+<!--Задание №3-->
+    <script>
+        var arrLength = 5;
+
+        var arr = [];
+
+        for (var i = 0; i < arrLength; i++) {
+	      if (i % 2 === 0) {
+  	        arr[i] = new Array('odd', 'odd', 'odd', 'odd');
+        } else {
+  	        arr[i] = new Array('even', 'even', 'even', 'even');
+          }
+        }
+        console.log(arr);
+</script>
+
+</body>
+</html>
